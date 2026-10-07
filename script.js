@@ -26,9 +26,15 @@ function addTask() {
 
 function renderTasks() {
   const list = document.getElementById("taskList");
+  const searchBox = document.getElementById("taskSearch");
+  const query = searchBox ? searchBox.value.trim().toLowerCase() : "";
   list.innerHTML = "";
 
-  tasks.forEach(function (task) {
+  const visibleTasks = tasks.filter(function (task) {
+    return task.title.toLowerCase().includes(query);
+  });
+
+  visibleTasks.forEach(function (task) {
     const card = document.createElement("div");
     card.className = "task-card" + (task.completed ? " completed" : "");
 
