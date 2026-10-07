@@ -11,6 +11,13 @@
     <div class="container">
         <h1>Student Task Manager</h1>
 
+        <div class="task-form">
+            <input type="text" id="taskInput" placeholder="Enter your task">
+            <textarea id="taskDescription" placeholder="Task description"></textarea>
+            <input type="date" id="taskDate">
+            <button onclick="addTask()">Add Task</button>
+        </div>
+
         <h2>My Tasks</h2>
 
         <div id="taskList"></div>
